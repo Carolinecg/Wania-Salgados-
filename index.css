@@ -454,54 +454,54 @@ body {
 
 /* NESTA PARTE EU CRIEI UMA IMG CLASS NO MEU HTML PARA CONSEGUIR FAZER MOFIFICAÇOES INDIVIDUAIS NAS IMAGENS E USEI O !IMPORT PARA 'OBRIGAR' O CSS A EXECUTAR.*/
 
-.Bolo-chocolate {
-    border: 8px solid #6d491ba8; /* Aplica uma borda marrom */
-    color: #333; /* Aplica a cor do texto (se houver) */
-    background-color: #e0d8c0; /* Fundo suave */
+.bolo-chocolate {
+  border: 8px solid #6d491ba8; /* Aplica uma borda marrom */
+  color: #333; /* Aplica a cor do texto (se houver) */
+  background-color: #e0d8c0; /* Fundo suave */
 }
 
-.Bolo-chocolate + h2 {
-    font-size: 25px;
-    color: #5c3613f8;
+.bolo-chocolate + h2 {
+  font-size: 25px;
+  color: #5c3613f8;
 
 }
 
 
 /* CASO ALGUMA FUNÇÃO, TIPO A COR DE FUNDO, NÃO 'QUISER' APARECER, PODEMOS USAR O -> !IMPORTANT, APÓS ESCOLHER A COR PARA FORÇAR SUA APARIÇÃO. */
-.Bolo-abacaxi {
-    border: 8px solid #f0e10f60; /* Aplica uma borda amarelo  */
-    background-color: #f8f8f5; /* Fundo suave */
+.bolo-abacaxi {
+  border: 8px solid #f0e10f60; /* Aplica uma borda amarelo  */
+  background-color: #f8f8f5; /* Fundo suave */
 }
 
 
-.Bolo-abacaxi + h2 {
-    font-size: 25px;
-    color: #e9b10b;
+.bolo-abacaxi + h2 {
+  font-size: 25px;
+  color: #e9b10b;
 }
 
 
-.Bolo-Morango {
-    border: 8px solid rgb(230, 72, 72); /* Borda vermelha */
-    background-color: #a70b0b; /* Fundo vermelho */
+.bolo-morango {
+  border: 8px solid rgb(230, 72, 72); /* Borda vermelha */
+  background-color: #a70b0b; /* Fundo vermelho */
 }
 
 
-.Bolo-Morango + h2 {
-    font-size: 25px;
-    color:#a00707
+.bolo-morango + h2 {
+  font-size: 25px;
+  color:#a00707
 }
 
 
-.Bolo-cenoura {
-    border: 8px solid rgb(235, 204, 110);
-    background-color: orange;
+.bolo-cenoura {
+  border: 8px solid rgb(235, 204, 110);
+  background-color: orange;
     
 }
 
 
-.Bolo-cenoura + h2 {
-    font-size: 25px;
-    color: rgb(214, 157, 50);
+.bolo-cenoura + h2 {
+  font-size: 25px;
+  color: rgb(214, 157, 50);
 }
 
 
