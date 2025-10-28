@@ -1,0 +1,617 @@
+
+/* Margin-bottom:30px; = Isso criará um espaço    maior  entre o cabeçalho e o corpo da página
+  margin-top: 30px; Ou, se preferir, pode aplicar a margem no corpo 
+  
+  float: left; Para alinhar a imagem a esquerda.
+
+  float: right = Para alinhar a imagem à direita.
+
+  display: block e margin: 0 auto; = Centralizar a imagem ao centro.
+
+  height: 100px ou qualquer outro numero = Define a altura. Do cabeçalho ou de qualquer outra parte do site.
+
+  padding-top = Quando você usa padding-top, está empurrando o conteúdo do elemento (como texto ou imagens) para baixo.
+
+  position: relative; top: 20 = Permite mover o elemento para qualquer lugar em relação à sua posição original, usando as propriedades top, right, bottom e left.
+
+  transform: rotate() = Para mover o elemento em ângulos, você pode usar transform: rotate() em conjunto com o position: relative para rotacioná-lo.
+  
+ Clear: both; /* Garante que a imagem comece em uma nova linha
+
+ Position: absolute; Top: 20px;= A propriedade top permite controlar o posicionamento vertical do elemento, movendo-o para cima ou para baixo, dependendo do valor atribuído.
+
+ Line-height: 1.4; = Controla o espaçamento entre linhas. 
+
+ Word-wrap: break-word; = Permite que o texto quebre automaticamente 
+ 
+ Text-transform: uppercase; =Deixa tudo em maiúsculas
+ 
+ white-space: nowrap; = Impede que o texto quebre em várias linhas
+
+ Overflow: hidden; = Oculta o texto que ultrapassar o limite
+ 
+ text-overflow: ellipsis; /* Adiciona '...' se o texto for cortado
+ 
+ Justify-content: space-between; = Vai distribuir os links ao longo do container 
+ 
+ flex-direction: column; = Organiza os itens em uma coluna. (um em cima do outro).
+         [Item 1]
+         [Item 2]
+         [Item 3]
+
+ flex-direction: row (padrão): Alinha os itens horizontalmente (lado a lado)
+
+ Align-items: center; = Centraliza o conteúdo horizontalmente 
+
+ justify-content: center; /* Centraliza o conteúdo verticalmente
+ 
+ height: 100vh; /* Garante que a altura da seção ocupe toda a altura da tela
+
+ Object-fit: cover; /* Garante que a imagem preencha o container 
+ 
+ Font-Weight: bold; deixa o texto em negrito, aumentando a espessura das letras.
+
+ justify-content: flex-end = Palavras, letras, links ficam no meio do site
+
+ CONTAINER = Um container é como uma caixa que organiza e segura outras coisas dentro dela. No HTML, ele é qualquer elemento (como <div>, <section>, <header>, etc.) que você usa para agrupar ou organizar outros elementos. Container é a parte principal que agrupa as outras coisas.
+
+ Box-shadow: 0 4px 8px rgba(160, 53, 3, 0.1); /* Aplica uma sombra suave ao redor do container de cada bolo */
+
+ 
+
+
+  
+ 
+  
+/* Aumenta a visibilidade das setas/BOTÃO CARROSSEL */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgb(82, 219, 82) ; /* Cor da seta - exemplo: VERDE */
+   
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgb(166, 63, 235) ; /* Cor da seta*/
+    opacity: 1 !important; /* Remove a transparência */
+    border-radius: 50%; /* Faz as setas ficarem arredondadas */
+    padding: 20px; /* Aumenta o tamanho das setas */
+    transition: all 0.3s ease; /* animação suave ao passar o mouse */
+    box-shadow: 0 0 10px rbga(179, 236, 179, 0.5); /* brilho sutil ao redor */
+}
+
+
+/* Efeito ao passar o mouse nas setas */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  transform: scale(1.0); /* aumenta o tamanho suavemente */
+  box-shadow: 0 0 15px rgba(90, 200, 90, 0.8); /* brilho mais forte */
+}
+
+
+.carousel-inner {
+  overflow: hidden;
+  gap:0;
+  
+}
+
+
+/* Mexendo no banner */
+.carousel-item {
+  transition: none !important;      
+}
+
+
+/* Overlay degradê suave */
+.carousel-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(245, 234, 170, 0.2), rgba(241, 237, 210, 0.2));
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+
+
+.carousel-item img {
+  width: 100%; /* Mantém a largura cheia do banner*/
+  max-height: 600px; /* define altura máxima desejada */
+  transform: scale(1); /* Define a escala da imagem. 
+   scale(1) significa que a imagem mantém seu tamanho original. 
+   Valores maiores que 1 aumentam, menores que 1 reduzem. */
+
+  transition: transform 1.5s ease-in-out; /* Cria uma transição suave quando a propriedade 'transform' mudar. 
+   Aqui, a mudança na escala da imagem (zoom) levará 1.5 segundos. 
+   ease-in-out faz a animação começar devagar, acelerar no meio e desacelerar no final. */
+
+  animation: none; /* Remove qualquer animação pré-definida que poderia estar aplicada à imagem. 
+   Sem isso, animações anteriores podem conflitar com o efeito de zoom ou transição. */
+
+}
+
+
+@keyframes zoomInOut{
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+
+.carousel-item.active img {
+    animation: zoomInOut 6s ease-in-out infinite;
+}
+
+
+
+
+
+/* Indicadores (bolinhas) do carrossel */
+.carousel-indicators [data-bs-target] {
+  background-color: #7a3fe9; /* cor das bolinhas */
+  width: 12px;
+  height: 12px;
+  border-radius: 50%; /* bolinha redonda */
+  margin: 0 5px;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+  background-color: #4adb7c; /* bolinha ativa (verde clara) */
+  opacity: 1;
+}
+
+
+
+
+
+
+/* CARROSSEL */
+
+/* Resetando as margens e preenchimento padrão */
+*{
+    margin:0 ; /* Remove a margem padrão de todos os elementos */
+    padding: 0;/* Remove o preenchimento padrão de todos os elementos */
+    box-sizing: border-box; /* Faz com que o padding e a borda sejam incluídos nas dimensões totais do elemento */
+}
+
+
+
+/* Estilos gerais para o corpo */
+body {
+    background: linear-gradient(to bottom,#efeaf1,  #fcfcfc, #f5d4f8); /* Um lilás clarinho profissional */
+    color: #0a0a0a;
+    text-align: center;
+    padding: 20px;
+}
+
+
+#sobre {
+  margin-top: 20px;   /* menos espaço em cima */
+  margin-bottom: 20px; /* menos espaço embaixo */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+/* ESTILO DO TITULO SOBRE WANIA */
+#sobre h2 {
+    font-family:'Roboto', sans-serif; /* Fonte estilosa e legível já disponível */
+    font-weight: 600;     /* Peso médio para elegância */
+    font-size: 2.8rem;    /* Tamanho grande para destaque */
+    color: #8b3fa9;     /* Tom roxo suave, elegante */
+    padding: 10px 15px;   /* Espaçamento da cor dentro do titulo */
+    border-radius: 15px;   /* Bordas arredondadas sutis */
+    background-color: #e8d9f1;    /* Fundo clarinho para destacar dentro do titulo */
+    display: inline-block;  /* Só ocupa o tamanho do texto */
+  
+}
+  
+
+#sobre p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.15rem;
+    line-height: 1.6;    /* Espaçamento entre linhas para conforto */
+    color: #271a38;
+    font-style: normal;    /* Sem itálico, para clareza */
+    font-weight: 400;      /* Normal, sem negrito */
+    max-width: 700px;      /* Limita largura para não ficar difícil ler em telas grandes */
+    margin: 0 auto;        /* Centraliza o parágrafo na seção */
+    padding: 0 15px;       /* Espaçamento lateral */
+    text-align: justify;
+
+}
+
+
+
+/* Adicionar um fundo diferenciado ou leve no fundo das imagens */
+#salgados {
+  background: linear-gradient(135deg, #f8f7f5, #faf0d4); /* degradê suave */
+  padding: 50px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+
+/* Adicionar efeito hover nas imagens dos salgados*/
+.produtos img:hover {
+  transform: scale(1.12);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+/* Deixar títulos dos produtos com degradê ou cor marcante */
+.item-produto h3 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #7c06ca, #f06595);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
+}
+
+
+/* Adicionar espaçamento uniforme entre produtos*/
+.produtos {
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; /* aumenta espaçamento para ficar mais clean */
+  justify-content: center;
+  margin-top: 50px;
+}
+
+
+
+
+
+
+/* TÍTULO SALGADOS ASSADOS (H2)*/
+
+.Titulo-produto {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #a83fee, #f06595);
+  -webkit-background-clip: text;  /*Faz com que o degradê fique dentro do texto, e não no fundo da caixa */
+  -webkit-text-fill-color: transparent; /*Torna o texto “transparente” para que o degradê possa aparecer nele.*/
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin-top: 80px; /*Dá um leve sombreado para destacar o texto degradê, mas não é obrigatório. Use se quiser um toque de profundidade. */
+}
+
+
+
+.produtos  {
+    display:grid;      /* Define que o container será um grid (grade) */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));         /* Cria colunas que se ajustam automaticamente, com largura mínima de 300px */
+    gap: 25px;        /* Define o espaçamento de 10px entre as colunas e linhas */
+    justify-content: center; /* Centraliza os elementos no grid */
+    margin-top: 50px;
+}
+
+
+
+.produtos img {
+    width: 100%;
+    height: auto;  /* Mantém a proporção da imagem, ajustando a altura automaticamente */
+    background-color: #f3eea9;  /* Adiciona um fundo lilás claro às imagens */
+    padding: 10px;
+    border-radius: 80px;
+    object-fit: cover;  /* Evita distorção cortando a imagem corretamente */  
+}
+
+
+.item-produto h3 {
+  margin-bottom: 8px; /* Espaço pequeno entre o título e a imagem */
+  margin-top: 0;       /* Tira espaço acima, se houver */
+  font-size: 23px;
+  color: #7c4a1b;
+}
+
+.item-produto {
+   text-align: center;
+   margin-bottom: 50px; /* Espaço maior abaixo dos salgados */
+}
+
+
+
+
+
+/* Container que organiza a linha e o emoji do BOLO e do REFRI*/
+.linha-simples {
+  display: flex;   /* Usa Flexbox para alinhar os itens */
+  align-items: center;    /* Alinha verticalmente no centro */
+  justify-content: center;  /* Centraliza horizontalmente */
+  margin: 50px 0;           /* Espaço acima e abaixo da linha. Espaço entre as imagens e a alinha */
+ 
+}
+
+
+/* Cria as linhas antes e depois do emoji */
+.linha-simples::before,
+.linha-simples::after{
+    content: "";     /* Necessário para criar conteúdo nas pseudo-linhas */
+    flex: 1;   /* Faz a linha ocupar o máximo de espaço possível */
+    height: 2.3px;    /* Espessura da linha */
+    background: #772ea8;   /* Cor da linha (roxo) */
+    margin: 0 10px;   /* Espaço entre o emoji e a linha */
+
+} 
+
+
+
+/* Com efeito de zoom no emoji */
+.linha-simples span {
+  font-size: 2.9rem;       /* Tamanho do emoji */
+  transition: transform 0.6s ease; /* Suaviza o efeito */
+  cursor: pointer; /* Mostra que é interativo */
+}
+
+.linha-simples span:hover {
+  transform: scale(1.5); /* Aumenta levemente o emoji no hover */
+}
+
+
+
+
+
+
+
+/*TÍTULO DO BOLO */
+.titulo-bolo { 
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #a83fee, #f06595);
+  -webkit-background-clip: text;  /*Faz com que o degradê fique dentro do texto, e não no fundo da caixa */
+  -webkit-text-fill-color: transparent; /*Torna o texto “transparente” para que o degradê possa aparecer nele.*/
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  margin-top: 80px; /*Dá um leve sombreado para destacar o texto degradê, mas não é obrigatório. Use se quiser um toque de profundidade. */
+}
+
+
+/*Estilo do container onde os bolos sao exibidos */
+.Bolo-container  {
+    display:grid; /* Define um grid para organizar os bolos */
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));         /* Cria colunas que se ajustam automaticamente, com largura mínima de 300px */
+    gap: 30px; /* Espaçamento entre os cards */
+    justify-content: center; /* Centraliza o grid horizontalmente */
+    padding: 40px 20px; /* Espaço interno da seção */
+}
+
+
+
+/* Estilo para os bolos - Cada card de bolo */
+.Bolo {  
+  text-align: center;  /* Centraliza o conteúdo dentro de cada item do bolo */
+  background-color: #e0d3e0; /* Fundo lilás suave */
+  padding: 20px;  /* Espaço interno do card */
+  border-radius: 30px; /* Cantos arredondados para modernidade */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidade */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transição suave ao passar o mouse */
+  cursor: pointer; /* Indica que o card é interativo */
+    
+}
+
+
+/* Efeito hover nos cards */
+.Bolo:hover {
+  transform: translateY(-5px) scale(1.05); /* Leve elevação + zoom */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2); /* Sombra mais forte no hover */
+}
+
+
+/* Estilo para o título de cada bolo - Faz com que os títulos se destaquem, mas mantendo elegância. */
+.Bolo h2 {
+  font-family: 'Roboto', sans-serif; /* Fonte moderna */
+  font-size: 1.8rem; /* Tamanho grande e legível */
+  font-weight: 700;  /* Negrito */
+  background: linear-gradient(90deg,  #a83fee, #f06595 );   /* Degradê moderno */
+  -webkit-background-clip: text; /* Aplica degradê apenas no texto */
+  -webkit-text-fill-color: transparent; /* Torna o texto transparente para mostrar o degradê */
+  margin: 30px 0;  /* Espaçamento acima e abaixo do título */
+}
+
+
+/* Estilo para a descrição de cada bolo */
+.Bolo p {
+  font-family: 'Roboto', sans-serif;  /* Fonte consistente com o título */
+  font-size: 1rem; /* Tamanho legível */
+  color: #4b2a5f; /* Cor escura e elegante */
+  line-height: 1.5; /* Espaçamento entre linhas para leitura */
+  margin: 0; /* Remove margens padrão */
+}
+
+
+
+/* Estilo para as imagens dentro de cada item de bolo - Isso cria zoom suave + brilho ao passar o mouse. */
+.Bolo img {
+    width: 100%; /* Largura total do card */
+    height: auto;  /* Mantém a proporção da imagem, ajustando */
+    object-fit: cover; /* Ajusta a imagem sem distorcer */
+    border-radius: 30px; /* Bordas arredondadas */
+    transition: transform 0.2s, filter 0.3s; /* Transição suave para zoom e brilho */
+}
+
+
+
+/* Efeito hover nas imagens */
+.Bolo img:hover {
+  transform: scale(1.1); /* Zoom leve */
+  filter: brightness(1.1);  /* Aumenta brilho da imagem */
+}
+
+
+
+
+
+
+
+/* NESTA PARTE EU CRIEI UMA IMG CLASS NO MEU HTML PARA CONSEGUIR FAZER MOFIFICAÇOES INDIVIDUAIS NAS IMAGENS E USEI O !IMPORT PARA 'OBRIGAR' O CSS A EXECUTAR.*/
+
+.bolo-chocolate {
+  border: 8px solid #6d491ba8; /* Aplica uma borda marrom */
+  color: #333; /* Aplica a cor do texto (se houver) */
+  background-color: #e0d8c0; /* Fundo suave */
+}
+
+.bolo-chocolate + h2 {
+  font-size: 25px;
+  color: #5c3613f8;
+
+}
+
+
+/* CASO ALGUMA FUNÇÃO, TIPO A COR DE FUNDO, NÃO 'QUISER' APARECER, PODEMOS USAR O -> !IMPORTANT, APÓS ESCOLHER A COR PARA FORÇAR SUA APARIÇÃO. */
+.bolo-abacaxi {
+  border: 8px solid #f0e10f60; /* Aplica uma borda amarelo  */
+  background-color: #f8f8f5; /* Fundo suave */
+}
+
+
+.bolo-abacaxi + h2 {
+  font-size: 25px;
+  color: #e9b10b;
+}
+
+
+.bolo-morango {
+  border: 8px solid rgb(230, 72, 72); /* Borda vermelha */
+  background-color: #a70b0b; /* Fundo vermelho */
+}
+
+
+.bolo-morango + h2 {
+  font-size: 25px;
+  color:#a00707
+}
+
+
+.bolo-cenoura {
+  border: 8px solid rgb(235, 204, 110);
+  background-color: orange;
+    
+}
+
+
+.bolo-cenoura + h2 {
+  font-size: 25px;
+  color: rgb(214, 157, 50);
+}
+
+
+
+
+
+.Titulo-refrigerantes {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  color:  #6c1fa1;
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+
+/* Container dos refrigerantes */
+.Refrigerantes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+    max-width: 12000px;   /* Deixa o container um pouco maior */
+    margin: 0 auto;
+}
+
+
+/* Cada refrigerante */
+.Refri-item {
+    background:#f8f1fc ;
+    border-radius: 15px;
+    padding: 15px;
+    width: 260px;  /* Aumentei o card para acomodar a imagem maior */
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/*Tamanho do zoom ao passar o mouse no refrigerante */
+.Refri-item:hover {
+    transform: scale(1.20);
+}
+
+
+/* Texto abaixo das imagens */
+.Refri-item h3 {
+  margin-top: 0;     /* Remove espaço acima, se houver */
+  margin-bottom: 20px;  /* Diminui o espaço abaixo do título, “subindo” o texto */
+  font-size: 20px;
+  color: #5e2a92;
+  
+}
+
+
+/* Estilo das imagens */
+.Refri-item img {
+  width: 230px; /* Imagem maior, mas ainda cabendo no card */
+  height: auto;
+  border-radius: 12px;
+  background: white;
+  padding: 8px;
+  transition: transform 0.3s ease;
+}
+
+
+.Refri-item:hover img {
+  transform: scale(1.1); /* zoom na imagem quando passar o mouse */
+}
+
+
+
+
+
+
+
+/*ALINHANDO A SECTION 'SOBBE' E COLOCANDO ESTILO NO H2 */
+
+
+
+/* RODAPÉ ICONES WHATS E INSTAGRAM */
+/* Animação e efeito ao passar o mouse */
+.icon-hover {
+  transition: transform 0.3s, box-shadow 0.3s; /* Animação suave ao passar o mouse */
+}
+
+/* Efeito ao passar o mouse */
+.icon-hover:hover {
+  transform: scale(1.15);  /* Dá um zoom leve */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);  /* Sombra mais forte no hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
